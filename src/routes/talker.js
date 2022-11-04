@@ -12,6 +12,7 @@ const {
   watchedAtMiddleware,
   rateMiddleware,
   registerPersonMiddleware,
+  updatePersonMiddleware,
 } = middleWares;
 
 talker.get('/', async (req, res) => {
@@ -54,6 +55,17 @@ talker.post(
   watchedAtMiddleware,
   rateMiddleware,
   registerPersonMiddleware,
+);
+
+talker.put(
+  '/:id',
+  authMiddleware,
+  nameMiddleware,
+  ageMiddleware,
+  talkMiddleware,
+  watchedAtMiddleware,
+  rateMiddleware,
+  updatePersonMiddleware,
 );
 
 module.exports = talker;

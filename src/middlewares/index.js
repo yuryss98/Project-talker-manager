@@ -7,6 +7,7 @@ const talkMiddleware = require('./talkMiddleware');
 const watchedAtMiddleware = require('./watchedAtMiddleware');
 const rateMiddleware = require('./rateMiddleware');
 const registerPersonMiddleware = require('./registerPersonMiddleware');
+const updatePersonMiddleware = require('./updatePersonMiddleware');
 
 module.exports = {
   validateEmail,
@@ -18,4 +19,5 @@ module.exports = {
   watchedAtMiddleware,
   rateMiddleware,
   registerPersonMiddleware,
+  updatePersonMiddleware,
 };

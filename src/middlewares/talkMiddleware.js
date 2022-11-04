@@ -1,5 +1,5 @@
 const talkMiddleware = (campo, res, value) => {
-  if (!campo || campo === undefined) {
+  if (campo === undefined) {
     return res.status(400).json(
       { message: `O campo "${value}" é obrigatório` },
     );
