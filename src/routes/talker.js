@@ -1,6 +1,5 @@
 const express = require('express');
 const readFile = require('../services/readFile');
-const writeFile = require('../services/writeFile');
 
 const talker = express();
 

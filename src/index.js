@@ -13,7 +13,8 @@ app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
-app.use('/talker', routes.talker)
+app.use('/talker', routes.talker);
+app.use('/login', routes.login);
 
 app.listen(PORT, () => {
   console.log('Online');
