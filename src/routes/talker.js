@@ -13,6 +13,7 @@ const {
   rateMiddleware,
   registerPersonMiddleware,
   updatePersonMiddleware,
+  deletePersonMiddleware,
 } = middleWares;
 
 talker.get('/', async (req, res) => {
@@ -67,5 +68,7 @@ talker.put(
   rateMiddleware,
   updatePersonMiddleware,
 );
+
+talker.delete('/:id', authMiddleware, deletePersonMiddleware);
 
 module.exports = talker;
