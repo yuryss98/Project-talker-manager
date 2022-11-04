@@ -7,7 +7,7 @@ const registerPersonMiddleware = async (req, res) => {
   const data = await readFile();
 
   const newActivitie = {
-    id: data.at(-1).id + 1,
+    id: data[data.length - 1].id + 1,
     name,
     age,
     talk: {
