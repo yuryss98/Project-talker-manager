@@ -14,6 +14,7 @@ const {
   registerPersonMiddleware,
   updatePersonMiddleware,
   deletePersonMiddleware,
+  getTalkerMiddleware,
 } = middleWares;
 
 talker.get('/', async (req, res) => {
@@ -28,6 +29,8 @@ talker.get('/', async (req, res) => {
     console.error(error.message);
   }
 });
+
+talker.get('/search', authMiddleware, getTalkerMiddleware);
 
 talker.get('/:id', async (req, res) => {
   try {
