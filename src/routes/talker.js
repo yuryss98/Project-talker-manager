@@ -1,7 +1,18 @@
 const express = require('express');
 const readFile = require('../services/readFile');
+const middleWares = require('../middlewares');
 
 const talker = express();
+
+const {
+  authMiddleware,
+  nameMiddleware,
+  ageMiddleware,
+  talkMiddleware,
+  watchedAtMiddleware,
+  rateMiddleware,
+  registerPersonMiddleware,
+} = middleWares;
 
 talker.get('/', async (req, res) => {
   try {
@@ -33,5 +44,16 @@ talker.get('/:id', async (req, res) => {
     console.error(error.message);
   }
 });
+
+talker.post(
+  '/',
+  authMiddleware,
+  nameMiddleware,
+  ageMiddleware,
+  talkMiddleware,
+  watchedAtMiddleware,
+  rateMiddleware,
+  registerPersonMiddleware,
+);
 
 module.exports = talker;
